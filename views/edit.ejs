@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Edit <%= todo.data %></title>
+  </head>
+  <body>
+
+<header><%- include('partials/header'); %></header>
+
+<div class="row">
+    <div class="col d-flex justify-content-center">
+      <div class="shadow w-50 p-3 mb-3 bg-body-tertiary rounded mt-5">
+        <h4 class="text-center mb-3 font-weight-bold interactive-heading">
+          Edit your todo list.
+        </h4>
+        <form action="/edit/<%= todo._id %>" method="post">
+            <div class="input-group mb-3">
+                <input type="text" value="<%= todo.data %>" class="form-control" name="data" />
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Update Task</button>
+                <button class="btn btn-outline-secondary"> Back </button>
+            </div>
+        </form>
+
+      </div>
+    </div>
+  </div>

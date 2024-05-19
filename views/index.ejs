@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Todo List</title>
+  </head>
+  <body>
+    <header><%- include('partials/header'); %></header>
+
+    <script>
+      function validateForm(event) {
+          const inputField = document.querySelector('input[name="data"]');
+          if (inputField.value.trim() === '') {
+              alert('Please enter a task.');
+              event.preventDefault(); // Prevent form submission
+          }
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+          const form = document.querySelector('form');
+          form.addEventListener('submit', validateForm);
+      });
+  </script>
+
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <div class="shadow w-50 p-3 mb-3 bg-body-tertiary rounded mt-5">
+          <h4 class="text-center mb-3 font-weight-bold interactive-heading">
+            Add your daily task in todo list.
+          </h4>
+          <form action="/new" method="post">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                placeholder="eg: cooking, eating, coding"
+                class="form-control"
+                name="data"
+              />
+              <button
+                class="btn btn-outline-secondary"
+                type="submit"
+                id="button-addon2"
+              >
+                Sumbit Task
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+
+
+<% if (todos && todos.length > 0) { %>
+<div class="container">
+  <% todos.forEach(function(todo) { %>
+  <div class="row">
+      <div class="col d-flex justify-content-center">
+          <div class="w-50">
+              <div class="alert alert-light" role="alert">
+                <%= todo.data %>
+                <br>
+                <small><%= new Date(todo.createdAt).toLocaleDateString() %></small>
+                <a class="editTodo" href="/edit/<%= todo._id %>">Edit</a>
+                <a class="deleteTodo" href="/delete/<%= todo._id %>">Delete</a>
+              </div>
+          </div>
+      </div>
+
+      
+  </div>
+  <% }); %>
+</div>
+<% } else { %>
+  <div class="col d-flex justify-content-center">
+    <div class="w-20">
+        <div class="alert alert-light" role="alert">
+          No tasks available. Add a new task!
+        </div>
+    </div>
+</div>
+</div>
+<% } %>
+
+  </body>
+</html>

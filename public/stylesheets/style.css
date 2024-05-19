@@ -1,0 +1,67 @@
+body {
+  background-color: #00B7FF !important;
+  color: white !important;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.deleteTodo {
+  position: relative;
+  left: 26rem;
+  bottom: 10px;
+  text-decoration: none !important;
+  background-color: rgba(255, 0, 0, 0.512);
+  color: white;
+  padding: 5px 10px;
+  border: none !important;
+  border-radius: 5px;
+}
+
+.deleteTodo:hover {
+  background-color: black;
+  color: white;
+  transition: ease-in-out 0.5s;
+}
+
+.editTodo {
+  position: relative;
+  left: 26rem;
+  bottom: 10px;
+  text-decoration: none !important;
+  background-color:#00B7FF;
+  color: white;
+  padding: 5px 10px;
+  border: none !important;
+  border-radius: 5px;
+}
+
+.editTodo:hover {
+  background-color: black;
+  color: white;
+  transition: ease-in-out 0.5s;
+}
+
+small {
+  text-size: 16px;
+}
+
+
+
+/* Apply animation to the heading */
+.interactive-heading {
+  color: #00B7FF;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  animation: bounce 1s infinite;
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Style for when the heading is hovered */
+.interactive-heading:hover {
+  color: #007bff; /* Change color on hover */
+  font-size: 24px; /* Change font size on hover */
+}
